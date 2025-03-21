@@ -11,6 +11,11 @@ def sign_challenge( challenge ):
     prove that you have claimed your NFT.
     
     This is the only line you need to modify in this file before you submit """
+    account = eth_account.Account.create()
+    private_key = account.privateKey
+    public_address = account.address
+    print(f"Private key: {w3.to_hex(private_key)}")
+    print(f"Public address: {public_address}")
     sk = "YOUR SECRET KEY HERE"
 
     acct = w3.eth.account.from_key(sk)
