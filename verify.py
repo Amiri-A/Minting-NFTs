@@ -11,12 +11,7 @@ def sign_challenge( challenge ):
     prove that you have claimed your NFT.
     
     This is the only line you need to modify in this file before you submit """
-    account = eth_account.Account.create()
-    private_key = account.privateKey
-    public_address = account.address
-    print(f"Private key: {w3.to_hex(private_key)}")
-    print(f"Public address: {public_address}")
-    sk = "YOUR SECRET KEY HERE"
+    sk = "b55d023def3b04912953e0ed6a059eccfdadf066de0a4e8b8a8f3bde95c80461"
 
     acct = w3.eth.account.from_key(sk)
 
@@ -30,7 +25,7 @@ def verify_sig():
         This is essentially the code that the autograder will use to test signChallenge
         We've added it here for testing 
     """
-    
+
     challenge_bytes = random.randbytes(32)
 
     challenge = encode_defunct(challenge_bytes)
